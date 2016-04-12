@@ -1,6 +1,16 @@
 
 # Course Calendar
 
+### Skill Track Registration
+The time has come to start thinking about which Skill Track you will elect to participate in. The two skill tracks being offered at this time are:
+* Java Track
+* Javascipt / Web Development Track
+
+Please take some time to think this over. You *must* register for a Skill Track by **Wednesday, April 20, at 11:59pm**.
+
+When you are ready, register for a Skill Track here: **<a href="https://docs.google.com/forms/d/1QsqoXUqNd4asSyTUtren7_5zrjErDBVN7Y4qQQLzGEg/viewform" target="_blank">Skill Track Registration</a>**
+
+
 ### Preseason
 |Module | Start Date | Overview |
 | :-------------: | :-----: |-------------|
