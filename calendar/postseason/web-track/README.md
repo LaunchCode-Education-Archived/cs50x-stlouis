@@ -1,3 +1,5 @@
+[Back to Course Calendar](../..)
+
 # Web Track
 
 ### Synopsis
@@ -19,5 +21,3 @@ Class 3 | 5/3 | Class 3 Prep | In Class | Bootstrap; Responsiveness (understand 
 Class 4 | 5/5 | Class 4 Prep | In Class | Chaining API calls, surviving "callback hell"; Some more advanced CSS  |
 Class 5 | 5/10 | Class 5 Prep | In Class | Botstrap grid; the Bootstrap carousel component; jQuery bind | 
 Class 6 | 5/12 | Class 6 Prep | In Class | Special talks on: Advanced JS (modules, `this`, and promises); Full-stack (how to set up a backend like C$50 Finance); Advanced CSS and UX (SASS, CSS best practices, more cool Bootstrap components) |
-
-
