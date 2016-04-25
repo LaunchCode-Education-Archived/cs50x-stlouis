@@ -1,24 +1,6 @@
 
 # Course Calendar
 
-### Resume Review Sign Ups
-
-On Thursday, April 21st, employers and professional HR experts will join us to review student resumes and talk to them about their experience. This is a great opportunity to get some personalized feedback on your resume.
-
-Sign up for a (general) timeslot here: **<a href="https://docs.google.com/forms/d/1bNnsG6aStpq7UJdEib42vftUkEKDg4mzN6jBdmt_gH0/viewform" target="_blank">Resume Review Sign Up</a>**
-
-And don't forget to bring your resume!
-
-### Skill Track Registration
-The time has come to start thinking about which Skill Track you will elect to participate in. The two skill tracks being offered at this time are:
-* Java Track
-* Javascipt / Web Development Track
-
-Please take some time to think this over. You *must* register for a Skill Track by **Tuesday, April 19, at 11:59pm**.
-
-When you are ready, register for a Skill Track here: **<a href="https://docs.google.com/forms/d/1QsqoXUqNd4asSyTUtren7_5zrjErDBVN7Y4qQQLzGEg/viewform" target="_blank">Skill Track Registration</a>**
-
-
 ### Preseason
 |Module | Start Date | Overview |
 | :-------------: | :-----: |-------------|
