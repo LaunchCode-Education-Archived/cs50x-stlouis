@@ -16,7 +16,7 @@ Class | Date | Prep Work | During Class | Topics
 |------|----|----------|--------------|-------|
 Class 0 | 4/21 | [Class 0 Prep](./materials/class0-prep) | [In Class](./materials/class0) | Git, Chrome dev tools, themoviedb API | 
 Class 1 | 4/26 | [Class 1 Prep](./materials/class1-prep) | [In Class](./materials/class1) | review of AJAX, and jQuery DOM manipulations; branches in Git | 
-Class 2 | 4/28 | [Class 2 Prep](./materials/class2-prep) | [In Class](./materials/class2-prep) | Semantic HTML; CSS (box model, other essentials), functional JS, more AJAX |
+Class 2 | 4/28 | [Class 2 Prep](./materials/class2-prep) | [In Class](./materials/class2) | Semantic HTML; CSS (box model, other essentials), functional JS, more AJAX |
 Class 3 | 5/3 | Class 3 Prep | In Class | Bootstrap; Responsiveness | 
 Class 4 | 5/5 | Class 4 Prep | In Class | Chaining API calls, surviving "callback hell"; Some more advanced CSS  |
 Class 5 | 5/10 | Class 5 Prep | In Class | Botstrap grid; the Bootstrap carousel component; jQuery bind | 
