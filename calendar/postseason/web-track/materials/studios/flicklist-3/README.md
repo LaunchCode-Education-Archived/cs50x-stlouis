@@ -44,9 +44,48 @@ Let's look briefly at what has changed in each of our files:
 
 ##### index.html
 
+In `index.html`, the only important change is that we have wrapped our two `<section>`s together inside a `<div>` tag with a class of "main-content". We have also removed the "big-header" id from the `<header>` at the top of our page. Since we'll be using Bootstrap to style this header, we no longer need to give it an id. 
+
 ##### flicklist.js
 
+The only change in `flicklist.js` is that the `api` object at the top of the file now has an extra property:
+
+```js
+var api = {
+  root: "https://api.themoviedb.org/3",
+  token: "TODO", // TODO 0 add your api key
+
+  /**
+   * Given a movie object, returns the url to its poster image
+   */
+  posterUrl: function(movie) {
+    // TODO 4b
+    // implement this function
+
+    return "http://images5.fanpop.com/image/photos/25100000/movie-poster-rapunzel-and-eugene-25184488-300-450.jpg" 
+  }
+}
+```
+
+The object now has three properties: `api.root`, `api.token`, and `api.posterUrl`. But `posterUrl` is a tad special, because rather than a simple primitive type like a string or int, `api.posterUrl` is a function!
+
+You can call this function like you would call any other:
+
+```js
+var myMovie = {}; // pretend we have some movie object lying around
+var url = api.posterUrl(myMovie);
+console.log(url); // => logs http://images5.fanpop.com/image/photos/25100000/movie-poster-rapunzel-and-eugene-25184488-300-450.jpg
+```
+
+One of your tasks will be to implement this function so that it returns, for a given movie, the url to a jpg somewhere on the internet where that movie's poster image lives.
+
 ##### styles.css
+
+We've made a few small changes here, like making the backgorund color of the browse section black, and adjusting a jew margin and padding values. 
+
+Notice that in some cases we use a new unit of measurement, the percent, for specifying values. For example, all sections now have a `padding: 2%;" rule. Using 2% rather than a rigid pixel value means that the exact padding changes depending on the width of the container of the section. This helps make our page more responsive, because a certain number of pixels, like say 20px, might seem too small when the screen is very large, but might be too much once the screen is very small.
+
+Finally, notice that we specify `<hr>` elements to have a border color of `rgba(128,128,128,0.2)`. This gives the `<hr>` a translucent gray color.
 
 ### Assignment
 
@@ -62,7 +101,7 @@ As usual, add your api key to the object near the top of `flicklist.js`.
 
 In flicklist.js, inside the `render` function, add a button to each Watchlist item. When clicked, the appropriate movie should be removed from `model.watchlistItems`, and `render` should be called again.
 
-TODO explain `splice`
+To remove the item from the array, you can use a new array function called <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>. You'll also need to use `indexOf` again (you should be familiar with this function from the previous studio), in order to determine where to splice from the array.
 
 #### 2. Bootstrap Makeover Party
 
@@ -92,6 +131,8 @@ In addition to just using Bootstrap classes as they are, we can also customize t
 Do that now, in `styles.css`. Make the jumbotron class have centered text (rather than left-aligned). 
 
 Also, the jumbotron by default has a margin of 30 pixels. This is going to become a little much if the user is on a smaller screen. Change the bottom margin to a value of `1%`. This both reduces the margin, and makes it "fluid", calculating it as a percentage of the width, rather than a fixed value.
+
+Finally, note that this customization only works because in the head of `index.html`, we include our own stylesheet AFTER including Bootstrap. 
 
 ##### 2d. Style the Browse List
 
@@ -124,13 +165,50 @@ Make 'em red. Here is the section on <a href="http://v4-alpha.getbootstrap.com/c
 
 ##### 2j. Customize the "I watched it" Buttons
 
-We want the button to fill the entire width of the container, and sit 10px below its upper neighbor.
+In `flicklist.js`, add some additional styles to these buttons. We want the button to fill the entire width of its container, and sit 10px below its upper neighbor.
 
 #### 3. Responsive Grid Layout
 
+Now let's implement the grid layout. When the page is sufficiently wide, we want the browselist to show up to the right of the Watchlist, rather than below it. 
+
+##### 3a. Implement the Grid
+
+In `index.html`, add another `<div>` inside the main content div, but still wrapped around both sections. This new div should have a class of "row". 
+
+Next, give each section a class of "col-?-?" (the question marks are for oyu to figure out). You want the watchlist to take up 5/12 of the width of the screen, and the browselist to take up the remaining 7/12. The "breakpoint" should be tablet devices-- in other words, if the user is on an iPad or anything smaller, then the column layout switches back to normal, with the browselist on its own block below the watchlist.
+
+Resize your window and see if it's working properly. At a certain point, the layout should switch back and forth.
+
+Read more on <a>Bootstrap Grids</a> for guidance.
+
+##### 3b. Add a Meta Viewport Tag
+
+Open up the developer tools and click the little icon of a tablet and a phone. This will allow you to simiulate varous devices in the browser.
+
+Uh-oh! Things don't look so great for these devices. Why not? Our layout is responsive...
+
+It turns out there is one more little tag we need to add to the top of our html file:
+
+##### 3c. Center items in the Watchlist
+
+Notice how on some really skinny screens, like the iPhone5, there is only enough horizontal space to fit one Watchlist item per block. It looks especially silly because the items are all floating to the left, so there is a lot of space to their right. We can fix this by simply applying a `text-align: center` style to the `<ul>` container. 
+
+Now the items center themselves!
+
+```html
+<meta name=viewport content="width=device-width, initial-scale=1">
+```
+From now on, this is another one of those tags that you probably want to include in all your HMTL right from the beginning. This sets the width of the page's viewport to be equal to the width of the user's device. Read more <a href="https://developers.google.com/speed/docs/insights/ConfigureViewport#additional-information">here</a>.
+
 #### 4. Poster Images
 
+The last task to tackle is to add poster images to the Watchlist items. 
+
 #### 5. Remove Dead Code
+
+There's a chunk of CSS code we no longer need after switching to Bootstrap. For example, Bootstrap automatically applies some transparency to disabled buttons. 
+
+All the rest of the CSS at the bottom of the file is obsolete. Go ahead and delete it!
 
 ### How to Submit
 
