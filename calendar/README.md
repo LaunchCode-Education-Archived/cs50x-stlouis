@@ -1,3 +1,11 @@
+### Final Projects and Hackathon!
+
+We will be having a **Project Fair on Tuesday, June 14th**, from 7pm-8:30pm. From 6pm-7pm we will have a small ceremony / celebration, and hand out certificates to everyone who has completed the class so far. At 7pm, we will open it up to the public, so please invite friends, family, and community members so they can see what you all have been working on!
+
+To help with that, we will be hosting a **Hackathon with the Harvard CS50 team on Friday, May 20th**. But don't just take it from us - <a href="https://www.dropbox.com/s/q18as79hapnvh4v/VID_20160427_170033084.mp4?dl=0" target="_blank">hear it from David Malan himself</a>!
+
+If you plan on attending the Hackathon, please RSVP here: **<a href="https://docs.google.com/forms/d/1FFdlyVtuHNh-ac2JvovV0yyTJ-IxoBCoGpWsb02YiHI/viewform" target="_blank">Hackathon RSVP</a>**
+
 
 # Course Calendar
 
