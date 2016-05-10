@@ -43,7 +43,38 @@ Rather than the word itself, like "vampire", the API says the "expected value is
 
 How the heck do we find that id number? There's a different endpoint set up specifically for this purpose: the <a href="http://docs.themoviedb.apiary.io/#reference/search/searchkeyword/get?console=1">/search/keyword</a> endpoint allows you to "search for keywords by name". 
 
+Let's try one of these keyword searches. Notice that in the right-hand sidebar on the docs page, is an interactive console via which you can make calls to the API. If you click the green "Call Resource" button, it will make the call. Try it now.
 
+You should receive a response like this:
+
+```nohighlight
+{
+  "status_code": 7,
+  "status_message": "Invalid API key: You must be granted a valid key."
+}
+```
+Just like in our code, the call won't be successful unless we provide our API key as a parameter. In fact, you can see from the docs that this endpoint has two required parameters:
+* `api_key`
+* `query`
+
+Go ahead and add those two parameters by clicking, above the green button, the text that says "Add a new header". Paste in your api key as the value for the `api_key` key, and the word "vampire" as the value for the `query` key. Then try clicking again. You should hopefully now see a response containing some "keyword" objects, where each object has a "name" and "id". The id looks like the magic number we need! 
+
+Now we can go back and try the Discover endpoint again, using keyword ids.
+
+Try hitting up /discover/movie, including with the following extra parameters:
+
+```nohighlight
+api_key: 123456789 (insert your api key here)
+with_keywords 192305|210090|210092|210093
+```
+
+Those numbers above are a handful of ids associated with "vampire". The pipe character "|" in between them specifes that we are treating this as an "Or" scenario: we want results that have at least one of the associated ids-- in other words, we don't require that a movie has all of the keywords. 
+
+With this request, you should get back some movie objects with vampire-related movies!
+
+So the overall proccess was:
+1. Get the keyword IDs for the search term
+2. Include those keywords in a request to Discover
 
 ### Starter Code
 
