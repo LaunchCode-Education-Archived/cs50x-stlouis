@@ -9,11 +9,41 @@ Today we will make only a few changes, but they are tricky changes.
 
 Here is a demo of what you are trying to accomplish: <a href="http://htmlpreview.github.io/?https://github.com/LaunchCodeEducation/flicklist/blob/aa417bf89d29552d0e825605e99dd5dc1fb8e077/index.html" target="_blank">FlickList 4 Demo</a>. Play around with the demo for a minute and get familiar with its features. Also, keep the demo open in a separate window, so you can refer to it while working on the assignment.
 
-Looks the same as last time! But if you have a sharp eye, you might have noticed one difference: the text of the search button has changed from "Search by Title" to "Search by Topic". And indeed, the underlying functionality has changed as well. Say, for example, you wanted to browse for some vampire movies. In the <a href="http://htmlpreview.github.io/?https://github.com/LaunchCodeEducation/flicklist/blob/b19ea10df9355f8079047e8b1f48e0a8e31a2ba9/index.html" target="_blank">prevous version</a>, you could try searching for "vampires", but you would only get results that literally had the word "vampire" in the title. That means no Twilight!! The new version will return any movies that prominently feature vampires, regardless of whether the word apepars in the title or not.
+Looks the same as last time! But if you have a sharp eye, you might have noticed one difference: the text of the search button has changed from "Search by Title" to "Search by Topic". And indeed, the underlying functionality has changed as well. Say, for example, you wanted to browse for some vampire movies. In the <a href="http://htmlpreview.github.io/?https://github.com/LaunchCodeEducation/flicklist/blob/b19ea10df9355f8079047e8b1f48e0a8e31a2ba9/index.html" target="_blank">prevous version</a>, you could try searching for "vampire", but you would only get results that literally had the word "vampire" in the title. That means no Twilight!! The new version will return any movies that prominently feature vampires, regardless of whether the word apepars in the title or not.
 
 ### The API
 
-##### 
+So what are we doing differently under the hood to allow this new Search functionality? We are interacting with TheMovieDB's API a little differently than before. 
+
+#### Read the Docs
+
+Let's dive into this by interacting more deeply with the API documentation.
+
+Up till now, we have been sending a request to their <a href="http://docs.themoviedb.apiary.io/#reference/search/searchmovie/get?console=1" target="_blank">/search/movie</a> endpoint, which you can see from the documentation (click that link above), is described as allowing you to "Search for movies by title." 
+
+Great, so is there a different search endpoint that allows you to, say, "search for movies by topic"? 
+
+Not exactly. But the <a href="http://docs.themoviedb.apiary.io/#reference/discover/get?console=1">/discover/movie</a> endpoint does have an "optional parameter" that seems promising. Take a minute now, and browse quickly through that long list of optional parameters and see if you can spot it.
+
+Did you find it? 
+
+The `with_keywords` parameter is described as such:
+
+> "Only include movies with the specified keywords. Expected value is an integer (the id of a keyword). Multiple values can be specified. Comma separated indicates an 'AND' query, while a pipe (|) separated value indicates an 'OR'."
+
+This cryptic explanation is telling us that with Discover, we can attach a parameter to our request specifying a "keyword" or a list of multiple keywords. The results we receive back will be filtered so that we only get movies that are tagged with the keywords. 
+
+But unfortunately it's not as simple as adding a key/value pair like: 
+
+```nohighlight
+with_keywords: "vampire"
+```
+
+Rather than the word itself, like "vampire", the API says the "expected value is an integer (the id of a keyword)". So if we want to search for "vampire", we actually need to pass in an **id number** like, say 954782, which is the official magic id number for the keyword "vampire". 
+
+How the heck do we find that id number? There's a different endpoint set up specifically for this purpose: the <a href="http://docs.themoviedb.apiary.io/#reference/search/searchkeyword/get?console=1">/search/keyword</a> endpoint allows you to "search for keywords by name". 
+
+
 
 ### Starter Code
 
