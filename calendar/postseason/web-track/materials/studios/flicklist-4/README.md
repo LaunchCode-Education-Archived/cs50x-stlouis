@@ -48,13 +48,72 @@ Work your way through the TODOs in the source code. The tasks are numbered. You 
 
 As usual, add your api key to the object near the top of `flicklist.js`.
 
-##### 1. 
+#### 1. Add A second argument to the `discoverMovies` function.
 
-##### 2. 
+In the `discoverMovies` function, we now want to specify keywords in our request. Before we can do that, we need to accept another argument so that the caller of the function can decide what those keywords are. Add a second argument called `keywords` in the function declaration.
 
-##### 3. 
+#### 2. Include Keywords in Discover Request
 
-##### 4. 
+Now that the `discoverMovies` function knows what keywords to use, the next task is to use them. When you make the AJAX request to the API, include these keywords. The `data` object is where you can specify additional things about the request. 
+
+When you think you're done, verify that this is working by doing a little test:
+
+Open up the developer tools and navigate to the Console tab. Notice that you can click on the console and start typing. The console, in addition to displaying your `console.log` statements, also allows you to test code snippets and see the results. 
+Type the following line:
+
+```js
+discoverMovies(render, "3133|185633|3630|7010");
+```
+
+and press enter. If all goes well, you should see your browse list reload with some Vampire flicks!
+
+#### 3. Change Url of Search Request
+
+Now that `discoverMovies` is working, let's fix `searchMovies`. This function's job is going to change now. Rather than grab a bunch of movies directly from the API, our search function will simply request those keyword IDs from the API. Once the keyword IDs come back, we will invoke `discoverMovies` and pass the keywords along as an argument.
+
+The first step is to change the url so that we are talking to a different endpoint. Instead of the `/movie` service, we want the one that handles requests for keywords.
+
+Verify that your code is working correctly by entering a search term and submitting the form, and then opening up the console. The `success` callback contains this line:
+
+```js
+console.log(response);
+```
+
+so the response should show up in the console once you submit the form. 
+
+Poke around inside the object and you shoudl see `.results` property like usual, but unlike previous responses, this array of results should not contain objects representing movies. Istead it should contain objects representing "keywords".
+
+#### 4. Handle Search Response by Invoking Discover
+
+Now that your search function is receiving keywords, the next step is to do something with those keywords. Basically, you want to collect those keywords into a string, and then pass that string over to `discoverMovies` and let it work its magic, taking advantage of the work you've already done over there.
+
+##### 4a. Get an Array of IDs
+
+So we have an array of keywords inside that that `response` object, but notice that each keyword object contains two properties: a `.id`, representing the id number, and a `.name`, representing the actual search term. In this case we don't care about the name, we just want the pure ids. This is the prefect chance to use the array <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map</a> function, which lets you create a new array from an old one by "mapping" each of its elements to something else. Use the `map` function to convert `response.results` into an array of ids, and store the result in a variable called `keywordIDs`.
+
+##### 4b. Convert the Array to a String
+
+So now we have an array of ids. But ultimately what we want is a *string* containing those ids. Specifically, the API specifies that we need a string in which the id numbers are interleaved with either commas or pipe `"|"` characters, e.g. `"3133,185633,3630,7010"` or `"3133|185633|3630|7010"`. 
+
+There is a quick, fancy way of producing this string: a magic array method called `join`, which does exactly what we want: creates a string with each element of the array, separated by commas or some other string. Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank">documentation for the join function</a>.
+
+Use the join function to create a variable called `keywordsString` whose value is the string we are trying to produce.
+
+##### 4c. Use an "Or" String Instead of an "And" String
+
+Rather than a comma-separated string, we want to insert a pipe character in between the ids. the secret to accomplishing this is that although the `join` function uses a comma character as the default content to intersperse between the elements, `join` also accepts an optional argument, where you can specify some other custom string. 
+
+Go ahead and change your call to `join` to take advantage of this.
+
+##### 4d. Invoke Discover
+
+Finally, invoke the `discoverMovies` function! Pass along the `callback` variable that was passed in, and the string holding the keywords, which you constructed above.
+
+Confirm that everything is working by opening your page in the browser and searching for some topics! You should see relevant movies (regardless of title) appear in the browse list.
+
+#### 5. Change Button Text
+
+This last step is very easy. Our search button needs an update! Change the text from "Search by Title" to "Search by Topic"
 
 ### How to Submit
 
