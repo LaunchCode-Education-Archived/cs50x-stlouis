@@ -13,6 +13,7 @@ Looks the same as last time! But if you have a sharp eye, you might have noticed
 
 ### The API
 
+##### 
 
 ### Starter Code
 
@@ -38,6 +39,30 @@ Switched to a new branch 'studio4-my-work'
 ```
 
 ### A Brief Tour
+
+There are only a few minor changes since last time, in just the `flicklist.js` file.
+
+First, notice that the `searchMovies` function has a bunch of TODOs, and its `success` callback no longer has any code (aside from a `console.log` statement). 
+
+The other small thing to notice is that, in a few places, a line that previously looked something like this:
+
+```js
+var itemView = $("<li></li>")
+   .attr("class", "list-group-item")
+   .append(title)
+   .append(overview)
+   .append(button);
+```
+
+now looks more like this:
+
+```js
+var itemView = $("<li></li>")
+   .attr("class", "list-group-item")
+   .append( [title, overview, button] );
+```
+
+The jQuery `append` function actually allows you to the option of passing in an array of child elements, and it will append each of them in the same order that they appear in the array. This simply allows us to make our code a bit more concise. Woohoo!
 
 
 ### Assignment
