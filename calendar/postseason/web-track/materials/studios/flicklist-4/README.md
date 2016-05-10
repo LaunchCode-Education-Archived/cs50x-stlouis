@@ -1,7 +1,7 @@
 ##### Web Track
 [Back to Class 2](../../class2)
 
-# Studio: FlickList 2
+# Studio: FlickList 4
 
 Today we will add a hodge-podge of miscellaneous new features to our movie site. We'll include some CSS to apply styles to the page, and build on our interaction with the API. 
 
