@@ -9,7 +9,7 @@ Along the way, hopefully you will continue to get more comfortable with jQuery, 
 
 ### Demo
 
-Here is a demo of what you are trying to accomplish: <a href="http://htmlpreview.github.io/?https://github.com/LaunchCodeEducation/flicklist/blob/2d8355672a264bc9e9523a9676cf4573d9e2c976/index.html" target="_blank">FlickList 4 Demo</a>. Play around with the demo for a minute and get familiar with its features. Also, keep the demo open in a separate window, so you can refer to it while working on the assignment.
+Here is a demo of what you are trying to accomplish: <a href="http://htmlpreview.github.io/?https://github.com/LaunchCodeEducation/flicklist/blob/aa417bf89d29552d0e825605e99dd5dc1fb8e077/index.html" target="_blank">FlickList 4 Demo</a>. Play around with the demo for a minute and get familiar with its features. Also, keep the demo open in a separate window, so you can refer to it while working on the assignment.
 
 Note the following additions since last time:
 * In the browse list, each movie is accompanied by a paragraph summarizing its plot.
