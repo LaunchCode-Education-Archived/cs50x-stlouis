@@ -7,9 +7,12 @@
 
 ### Demo
 
-Here is a demo of what you are trying to accomplish: <a href="http://htmlpreview.github.io/?https://github.com/LaunchCodeEducation/flicklist/blob/f3dae711763c73f56267ac35e076c56383183829/index.html" target="_blank">FlickList 2 Demo</a>. Play around with the demo for a minute and get familiar with its features. Also, keep the demo open in a separate window, so you can refer to it while working on the assignment.
+Here is a demo of what you are trying to accomplish: <a href="http://htmlpreview.github.io/?https://github.com/LaunchCodeEducation/flicklist/blob/636afdd8442225455cef24ea4a8560705a17313c/index.html" target="_blank">FlickList 5 Demo</a> (note: I noticed some weird behavior with this demo on Safari, so use Chrome for this). Play around with the demo for a minute and get familiar with its features. Also, keep the demo open in a separate window, so you can refer to it while working on the assignment.
 
 Note the following additions since last time:
+* The proverbial furniture has been rearranged. The two sections (watchlist and browse) are no longer arranged in side-by-side columns; instead the browse section has moved back to its former home, below the watchlist section.
+* The browse section is way different. Rather than displaying all the movies at once inside a list, now only one movie is shown at a time. The user can cycle through movies using a fancy UI "carousel", which displays the movie posters along with buttons for sliding back and forth between movies. Each time the carousel slides, the movie title and description update to reflect the newly active movie whose poster has slid into view. 
+* The browse section layout uses the Bootstrap grid system, in fact a *nested* grid: At the macro level, the section is split into (A) a column on the left for the movie info and carousel, and (B) a column on the right for the search form. Diving into that first column, it is further subdivided into (A-1) a column on the left for the movie title and overview, and (A-2) a column on the right for the carousel and the "Add to Watchlist" button.
 
 
 ### Starter Code
