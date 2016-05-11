@@ -55,10 +55,11 @@ Work your way through the TODOs in the source code. The tasks are numbered. You 
 
 ##### 2. Put in Carousel and Browse Info
 
-##### 3. Add carousel buttons and bind
+##### 3. Add carousel buttons
 
-##### 4. 
-##### 5. 
+##### 4. bind
+
+##### 5. CSS
 
 ##### 6. 
 
