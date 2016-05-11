@@ -17,7 +17,7 @@ Note the following additions since last time:
 
 ### Starter Code
 
-Same procedure as usual. First, fetch the studio4 branch from upstream:
+Same procedure as usual. First, fetch the studio5 branch from upstream:
 
 ```nohighlight
 $ git fetch upstream studio5
