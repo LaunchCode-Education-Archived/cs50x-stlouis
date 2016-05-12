@@ -3,7 +3,7 @@
 
 # Studio: FlickList 5
 
-
+In today's (final!) studio, you will add some finishing touches to the project. The changes are mostly cosmetic, but they will require you to refactor a significant chunk of your html and javascript code.
 
 ### Demo
 
@@ -49,28 +49,207 @@ Switched to a new branch 'studio5-my-work'
 
 ### Assignment
 
-Work your way through the TODOs in the source code. The tasks are numbered. You should work on them in the order prescribed, as follows:
+For this studio, there are some tasks that do not explicitly have TODO comments in the source code (it would be too messy / ambiguous as to where to place the comment). So follow the steps as outlined here:
 
-##### 0. API key
+#### 0. API key
+
+You know what to do.
+
+#### 1. Rearrange to use grid
+
+For starters, let's just try to implement this new grid layout in the browse section. In `index.html`, build out the following structure:
+
+```nohighglight
++-----------------------------------------------------------------------------------------------------+
+|                                           Browse Section                                            |
+| +-----------------------------------------------------------+ +-----------------------------------+ |
+| |         Container A (67% width)                           | |          Container B (33%)        | |
+| | +------------------------------+ +----------------------+ | |      (header and search form)     | |
+| | |     Conainer A-1 (58%)       | | Container A-2 (42%)  | | |                                   | |
+| | |                              | |                      | | |                                   | |
+| | +------------------------------+ +----------------------+ | |                                   | |
+| +-----------------------------------------------------------+ +-----------------------------------+ |
++-----------------------------------------------------------------------------------------------------+
+```
+
+This will involve adding some things, moving some things, and deleting some things. 
+
+Eventually the poster image carousel will live in Container A-2, and over in Container A-1 we will display the title and overview of the the currently visible movie poster. But for now, just ignore that, and implement this scaffolding. 
+
+A few things to point out:
+* Note that your search form ("Search by Topic") and header ("Browse Movies") should be placed inside Container B.
+* Give Container A-1 an attribute of `id="browse-info"`
+* Place A-1 and A-2 inside a Bootstrap <a>well</a> by wrapping the entire row that holds A-1 and A-2 inside a wrapper div with `class="well"`
+* Don't be afraid of breaking what you currently have. 
+* Google "Bootstrap Grid" if you need a refresher.
+* Feel free to open the Studio Demo in your browser and inspect its HTML with the dev tools.
+
+#### 2. Add Some Dummy Data
+
+Next, let's hard-code some fake content into your HTML page. Later you will delete this and use jQuery to add the real content dynamically, but this intermediate step should help clarify how to do that.
+
+In `index.html`, add the following content:
+* inside Container A-1, place an `<h4>` element with the text "Twilight", followed by an `<hr/>`, followed by a fake overview paragraph about Twilight. Make sure your overview paragraph is an accurate description of the plot of the movie, jk.
+* inside Container A-2, add a placeholder `<img>` (with a source that just points to "http://google.com"), followed by a button that says "Add to Watchlist" and has an attribute of `id="add-to-watchlist"`.
+
+#### 3. Create the Carousel
+
+Now for the fun part: inside Container A-2, create a Bootstrap Carousel. How the heck does one do that? It's essentially just like the other Bootstrap components we've already seen, but more complex, and composed of multiple elements rather than just one. You simply create some elements and wire them up with them the right class and id names and other attributes, and Bootstrap will work behind the scenes to make everything function properly. 
+
+Actually, for this task we are going to need to include Bootstrap's javascript library (we currently only have their CSS). So the first step is to head to <a href="http://getbootstrap.com/getting-started/#download-cdn" target="_blank">the bootstrap site</a> and copy/paste their "Latest compiled and minified JavaScript" into the top of `index.html`.
+
+Now it's time to create the carousel. Check out <a href="#">this Codepen example</a> (which I made, and which mirrors exactly what you want to do (make sure you expand the "html" window on Codepen so you don't go insane trying to read from a tiny box)), and also <a href="#">this W3 Schools example</a> (which has some extra stuff we don't care about, but provides explanations of the various parts, which you should read). 
+
+Build your carousel, and fill it with 3 movie poster images, using posters from the internet <a href="http://sumnersunsettheatre.com/wp-content/uploads/Minions-poster.jpg" target="_blank">like this</a>. Give your carousel an attribute of `id=browse-carousel` Make sure to also include the left and right "data slide" buttons, and make sure they work.
+
+Finally add this rule to your `styles.css` file:
+
+```css
+#browse-carousel {
+	max-width: 300px;
+	margin: auto;
+}
+```
+
+which will ensure that the carousel does not get annoyingly large, and is centered horizontally in its container.
+
+#### 4. New Model Property
+
+Now that you have the page layout and the carousel all set up, it's time to feed your app the actual movie data. You will do this by refactoring some of your javascript code in `flicklist.js`.
+
+The big change is that we no longer want the browse section to display a *list* of movies. We only want to display one at a time. Our underlying model should still use a list (i.e. `model.browseItems`) because we want to keep track of all the movies and have them around-- it's just that user will only visibily see one at a time. 
+
+This means that our `model` object will need a third property. Not only do we need to keep track of the list of browse items, we also need to keep track of *which item*, at any given moment, is the "active" one on display. 
+
+Add another property to the `model` variable. Name the property `activeMovieIndex`, and set it equal to `0`. This number represents which item from the browseItems array is currently active. So for example, because we start off with `0`, this means the first item in the array is the active movie.
+
+##### 5. Refactor the render Function
+
+The old `render` function, when adding the content to the browse section, iterates over each item in `model.browselist`. This doesn't really make sense anymore since we only want to display one browse item at any given time.
+
+##### 5a. Delete the old Code!
+
+Go ahead and delete this whole block of code:
+
+```js
+model.browseItems.forEach(function(movie) {
+  ...
+});
+
+```
+
+Gasp! (Actually, just comment it out. But cut and paste it to the bottom of the file or somewhere else out of the way.)
 
 
-##### 1. Rearrange to use grid
+##### 5b. Figure out the Current Active Movie
 
-##### 2. Put in Carousel and Browse Info
+Now let's get started building a fresh implementation of displaying the browse section. You should still be inside the `render` function, in the same place where the dust is still settling from decimating the old code.
 
-##### 3. Add carousel buttons
+First, we will need to know which movie object is the currently active one. Make a variable:
 
-##### 4. bind
+```js
+var activeMovie =   // TODO fill this in
+```
+
+and give it the correct value. (Remember, you have a list of browse items, and you have a number telling you which index is the active index).
+
+##### 5c. Title and Overview
+
+Next, replace the hard-coded "Twilight" content with the actual title and overview for the currently active movie. (Remember, you gave the container an id of "browse-info".)
+
+
+##### 5d. Revive the "Add to Watchlist" Button
+
+Previously we created a new button for each browse item, but now we just have one permanent button which you have already added to the HTML page. But that button doesn't work and is ugly. Bring it back to life!
+
+Your old code looked like this:
+
+```js
+var button = $("<button></button>")
+   .text("Add to Watchlist")
+   .attr("class", "btn btn-primary")
+   .click(function() {
+     model.watchlistItems.push(movie);
+     render();
+   })
+   .prop("disabled", model.watchlistItems.indexOf(movie) !== -1);
+```
+
+You pretty much want to do all that same stuff here. The only difference is that instead of *creating a new button* and storing it in a variable, you just need to modify the existing button (Remember, you gave it an id attribute).
+
+##### 5e. Fill the Carousel
+
+Now let's fill the carousel with movie poster images. Here's some starter code:
+
+```js
+// fill carousel with posters
+var posters = model.browseItems.map(function(movie) {
+ // TODO 
+ // return a list item with an img inside  
+});
+$("TODO").append(posters);
+```
+
+As you can see, we are mapping over the browseItems to create an array of elements. Then we are appending those elements into the carousel. 
+
+Inside the `map` callback, you should break that down into two steps: first, create a poster image (you can look up to remember how you did that in the watchlist), and then append it into an `<li>`. Remember, your `<li>` needs to have a special class name of `"item"` in order for the Bootstrap carousel to recognize it.
+
+You also must fill in that jQuery selector to make sure you are appending the list items into the apropriate place.
+
+##### 5f. Activate the Correct Poster Item
+
+The carousel also requires that exactly one list item also has a class of `"active"`.
+
+Here's a freebie:
+
+```js
+posters[model.activeMovieIndex].addClass("active");
+```
+
+Just add the above line. But don't paste it, type it out yourself!
+
+##### 6. Respond to Carousel Sliding
+
+Your page should now have a working carousel with actual movie data in it. 
+
+There is still one bug, which is that whenever the carousel slides to show a new movie poster, the rest of the app fails to respond. The title, overview, and everything else continue to show the previous movie.
+
+To solve this problem we must, actively respond whenever the carousel has slid to a new movie. We have already started this for you in the script at the bottom of `index.html`:
+
+```js
+$("#browse-carousel").on("slid.bs.carousel", function() {
+   console.log("the carousel just slid!");
+   var newIndex = $("#browse-carousel").find(".active").index();
+   // TODO 
+   // update the model and then re-render
+});
+```
+
+This code block uses a jQuery function called `on` which allows us to register a callback that will be executed whenever a certain event happens. In our case the event is the carousel sliding, which Bootstrap makes available under the name "slid.bs.carousel". This is just like a normal button with a `click` handler, but the `on` function lets you specify any event, not just a click. In fact, you actually can use `on` with buttons. The following two code blocks are equivalent:
+
+```js
+$("#mybutton").on("click", function() {
+   console.log("somebody clicked my button!");
+});
+```
+
+```js
+$("#mybutton").click(function() {
+   console.log("somebody clicked my button!");
+});
+```
+
+Anyway, whenever the carousel has slid to a new position, that annonymous function will be executed. We've left a TODO in there for you. The goal is to update the model (remember that your model must keep track of the current active movie index), and then re-render everything. In the line above the TODO, we've already done the hard part of figuring out what the new carousel index is, by using some new jQuery functions, `find` and `index`, whose purpose you can hopefully infer from their usage here.
+
+Once you've got this working, your page should update its content whenever the carousel slides!
 
 ##### 5. CSS
 
-##### 6. 
+The last step is to add some CSS and make everything look tidy. No guidance on this one! You got this. Just compare your version to the demo and rig up some CSS rules to make it work.
 
-##### 7. 
+One hint, regarding your carousel: remember that a `<ul>`, by default, has some padding on the left side.
 
-##### 8. 
-
-##### 9. 
+##### 6. Break points
 
 ### How to Submit
 
