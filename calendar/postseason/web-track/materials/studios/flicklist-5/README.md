@@ -79,7 +79,7 @@ Eventually the poster image carousel will live in Container A-2, and over in Con
 A few things to point out:
 * Note that your search form ("Search by Topic") and header ("Browse Movies") should be placed inside Container B.
 * Give Container A-1 an attribute of `id="browse-info"`
-* Place A-1 and A-2 inside a Bootstrap <a>well</a> by wrapping the entire row that holds A-1 and A-2 inside a wrapper div with `class="well"`
+* Place A-1 and A-2 inside a Bootstrap <a href="http://getbootstrap.com/components/#wells" target="_blank">well</a> by wrapping the entire row that holds A-1 and A-2 inside a wrapper div with `class="well"`
 * Don't be afraid of breaking what you currently have. 
 * Google "Bootstrap Grid" if you need a refresher.
 * Feel free to open the Studio Demo in your browser and inspect its HTML with the dev tools.
