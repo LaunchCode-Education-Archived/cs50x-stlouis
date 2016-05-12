@@ -90,7 +90,7 @@ Next, let's hard-code some fake content into your HTML page. Later you will dele
 
 In `index.html`, add the following content:
 * inside Container A-1, place an `<h4>` element with the text "Twilight", followed by an `<hr/>`, followed by a fake overview paragraph about Twilight. Make sure your overview paragraph is an accurate description of the plot of the movie, jk.
-* inside Container A-2, add a placeholder `<img>` (with a source that just points to "http://google.com"), followed by a button that says "Add to Watchlist" and has an attribute of `id="add-to-watchlist"`.
+* inside Container A-2, add a placeholder `<img>` (with an "src" equal to "https://pbs.twimg.com/profile_images/378800000576832113/3e69602eab961fd19b89cc65ea9bd2e8.jpeg"), followed by a button that says "Add to Watchlist" and has an attribute of `id="add-to-watchlist"`.
 
 #### 3. Create the Carousel
 
