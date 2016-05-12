@@ -1,13 +1,19 @@
 ##### [Web Track](../..)
 
-# Class 5
-
-### Before Class
-Before coming to class, please complete [Class 5 Prep](../class5-prep).
+# Class 6
 
 ### During Class
-* First, work on today's studio: [FlickList 4](../studios/flicklist-4)
-* Afterwards, we will <a href="https://youtu.be/UMJuzGMK0DQ" target="_blank">go over the staff solution to the studio</a>.
 
-### Homework
-Class 5 Prep
+It's your last day of class!
+
+* First, work on today's studio: [FlickList 5](../studios/flicklist-5)
+* Afterwards, we will go over the staff solution to the studio.
+
+### Where to go From Here
+
+Get started on your project! 
+
+Here is some guidance on directions you can go and topics you can study:
+
+(coming soon)
+
