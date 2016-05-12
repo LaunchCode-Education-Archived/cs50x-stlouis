@@ -40,12 +40,21 @@ Switched to a new branch 'studio5-my-work'
 
 ### A Brief Tour
 
+Here's what has changed since last time:
 
 ##### index.html
 
+The two-column layout has already been removed for you. Notice how the two sections are no longer inside a "row" div, and no longer have class names like "col-md-7", and the "main-content" div no longer has a class of "fluid-container". 
+
+There is some additional code in the script at the bottom of the page. More on that later.
+
 ##### flicklist.js
 
+Nothing new here.
+
 ##### styles.css
+
+A couple minor changes, not worth talking about.
 
 ### Assignment
 
@@ -243,13 +252,11 @@ Anyway, whenever the carousel has slid to a new position, that annonymous functi
 
 Once you've got this working, your page should update its content whenever the carousel slides!
 
-##### 5. CSS
+##### 7. CSS
 
 The last step is to add some CSS and make everything look tidy. No guidance on this one! You got this. Just compare your version to the demo and rig up some CSS rules to make it work.
 
 One hint, regarding your carousel: remember that a `<ul>`, by default, has some padding on the left side.
-
-##### 6. Break points
 
 ### How to Submit
 
@@ -327,7 +334,42 @@ To https://github.com/jharvard/flicklist.git
 If you go back and revisit github.com/jharvard/flicklist, you should now see your new branch up there! Specificially, near the top-left of the screen, you should see a dropdown menu that says "Branch: master". Click that dropdown and you should see an option for "studio2-my-work". Click on that branch, and you should now see the code you just worked on. Copy the current url in your browser's address bar (you are about to paste that url into Vocareum).
 
 ##### Submit on Vocareum
-On Vocareum, click the assignment titled **Studio: FlickList 5**. In your `/work` directory you should see a file called `studio4.txt`. Open up this file and fill in the link to your work on GitHub.
+
+On Vocareum, click the assignment titled **Studio: FlickList 5**. In your `/work` directory you should see a file called `studio5.txt`. Open up this file and fill in the link to your work on GitHub.
 
 
 #### Publish your Work using Github Pages!
+
+Lastly, let's put your work on display so you can show it off! Github has a feature called Github Pages, which makes it really easy to host your front-end projects on the real, live internet. You simply need to give your repository a branch with with the special name "gh-pages". 
+
+Let's do that now. First, create the new branch locally:
+
+```nohighlight
+$ git checkout -b gh-pages
+Switched to a new branch 'gh-pages'
+```
+
+(Notice that we didn't specify where the new branch should copy from, so by default it used the current studio5-my-work branch, which is what we want).
+
+Now we want to push this branch up to your remote repository. There is one slight complication, which is that when you forked our LaunchCodeEducation/flicklist repo back in Studio 0, your fork also received all of our branches, including our own gh-pages branch. So your remote in fact already has a (out of date) gh-pages branch. So first, delete that one:
+
+```nohighlight
+$ git push --delete origin gh-pages
+To https://github.com/jharvard/flicklist.git
+ - [deleted]         gh-pages
+```
+
+and now you can then push this local one:
+
+```nohighlight
+$ git push origin gh-pages
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 686 bytes | 0 bytes/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+To https://github.com/jharvard/flicklist.git
+ * [new branch]      gh-pages -> gh-pages
+```
+
+Now you (or anyone) can view your project! Just visit this url http://jharvard.github.io/flicklist (where jharvard is your username).
