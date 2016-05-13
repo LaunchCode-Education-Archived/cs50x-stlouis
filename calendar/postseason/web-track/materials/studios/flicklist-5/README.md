@@ -107,7 +107,7 @@ Now for the fun part: inside Container A-2, create a Bootstrap Carousel. How the
 
 Actually, for this task we are going to need to include Bootstrap's javascript library (we currently only have their CSS). So the first step is to head to <a href="http://getbootstrap.com/getting-started/#download-cdn" target="_blank">the bootstrap site</a> and copy/paste their "Latest compiled and minified JavaScript" into the top of `index.html`.
 
-Now it's time to create the carousel. Check out <a href="#">this Codepen example</a> (which I made, and which mirrors exactly what you want to do (make sure you expand the "html" window on Codepen so you don't go insane trying to read from a tiny box)), and also <a href="#">this W3 Schools example</a> (which has some extra stuff we don't care about, but provides explanations of the various parts, which you should read). 
+Now it's time to create the carousel. Check out <a href="http://codepen.io/jesselaunchcode/pen/ZWZyeX">this Codepen example</a> (which I made, and which mirrors exactly what you want to do (make sure you expand the "html" window on Codepen so you don't go insane trying to read from a tiny box)), and also <a href="http://www.w3schools.com/bootstrap/bootstrap_carousel.asp" target="_blank">this W3 Schools example</a> (which has some extra stuff we don't care about, but provides explanations of the various parts, which you should read). 
 
 Build your carousel, and fill it with 3 movie poster images, using posters from the internet <a href="http://sumnersunsettheatre.com/wp-content/uploads/Minions-poster.jpg" target="_blank">like this</a>. Give your carousel an attribute of `id=browse-carousel` Make sure to also include the left and right "data slide" buttons, and make sure they work.
 
