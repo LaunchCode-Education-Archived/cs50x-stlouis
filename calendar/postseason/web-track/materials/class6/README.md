@@ -11,9 +11,5 @@ It's your last day of class!
 
 ### Where to go From Here
 
-Get started on your project! 
-
-Here is some guidance on directions you can go and topics you can study:
-
-(coming soon)
+[Now What?](../now-what)
 
