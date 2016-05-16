@@ -6,7 +6,7 @@ Congratulations on finishing the class! Your next step is to make a personal pro
 
 ### Project
 
-You should now be in a position where you can (with some help) create a front-end project similar to the FlickList site we made in class or Problem Set 8 from CS50.
+You should now be in a position where you can (with some struggles and help along the way) create a front-end project similar to the FlickList site we made in class, or Problem Set 8 from CS50.
 
 If you're struggling to think of an idea, here is a basic framework that you can use:
 
@@ -19,21 +19,22 @@ Like FlickList and Pset8, build some kind of front-end for displaying data from 
 Stuff we didnt really talk about:
 * <a href="https://www.udacity.com/course/object-oriented-javascript--ud015" target="_blank">object-oriented Javascript</a>
 * <a href="http://eloquentjavascript.net/10_modules.html" target="_blank">modules</a>
-* Promises (a relatively new feature)
+* Promises (a relatively new feature of Javscript)
 
 I generally recommend these resources for learning more Javascript:
-* Eloquent Javascript
-* FreeCodeCamp
+* <a href="https://eloquentjavascript.net" target="_blank">Eloquent Javascript</a>
+* <a href="https://www.freecodecamp.com" target="_blank">FreeCodeCamp</a>
 
 ##### CSS
 
 Stuff we didn't really talk about:
-* Sass and Less
-* <a href="http://flexbox.io" target="_blank">Flexbox</a>
+* CSS Preprocessors like <a href="http://lesscss.org">LESS</a> and <a>SASS</a>
+* CSS Layout frameworks like <a href="http://flexbox.io" target="_blank">Flexbox</a> or <a href="https://gridstylesheets.org" target="_blank">Gride Stylesheets</a>
 
 I generally recommend these resources for learning HTML and CSS
 * <a href="http://learn.shayhowe.com/html-css/" target="_blank">Shay How</a>
-* 
+
+
 ##### A Javascript Framework
 
 As your project grows from 500 lines of code to 5,000 to 50,000, it becomes exponentially harder to "manage the complexity". Every time you try to add a new feature you end up breaking 5 things. 
@@ -41,10 +42,10 @@ As your project grows from 500 lines of code to 5,000 to 50,000, it becomes expo
 A framework is some technology that provides "scaffolding" around which you can build a project. The idea is that this scaffolding will help / force you into a project architecture that stays maintainable as it grows. 
 
 Some popular frameworks are:
-* AngularJS
-* EmberJS
-* React (technically not exactly a framework on its own)
-* Elm (this is actually an entirely new language that compiles to Javascript. You won't find a lot of jobs in Elm (yet...), but it's highly enjoyable (a personal favorite of mine) and quite possibly a much better way of writing web apps, time will tell)
+* <a href="https://angularjs.org" target="_blank">AngularJS</a>
+* <a href="http://emberjs.com" target="_blank">EmberJS</a>
+* <a href="https://facebook.github.io/react/" target="_blank">ReactJS</a> (technically is <a href="http://blog.andrewray.me/reactjs-for-stupid-people/" target="_blank">not exactly a framework</a> by itself)
+* <a href="https://elm-lang.org" target="_blank">Elm (this is actually an entirely new language that compiles to Javascript. You won't find a lot of jobs in Elm (yet...), but it's highly enjoyable (a personal favorite of mine) and quite possibly a much better way of writing web apps, time will tell)
 
 This site, <a href="http://todomvc.com" target="_blank">TodoMVC</a> shows you how to build the same Todo List app in a variety of different frameworks.
 
