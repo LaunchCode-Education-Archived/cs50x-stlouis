@@ -45,7 +45,7 @@ Some popular frameworks are:
 * <a href="https://angularjs.org" target="_blank">AngularJS</a>
 * <a href="http://emberjs.com" target="_blank">EmberJS</a>
 * <a href="https://facebook.github.io/react/" target="_blank">ReactJS</a> (technically is <a href="http://blog.andrewray.me/reactjs-for-stupid-people/" target="_blank">not exactly a framework</a> by itself)
-* <a href="https://elm-lang.org" target="_blank">Elm (this is actually an entirely new language that compiles to Javascript. You won't find a lot of jobs in Elm (yet...), but it's highly enjoyable (a personal favorite of mine) and quite possibly a much better way of writing web apps, time will tell)
+* <a href="https://elm-lang.org" target="_blank">Elm</a> (this is actually an entirely new language that compiles to Javascript. You won't find a lot of jobs in Elm (yet...), but it's highly enjoyable (a personal favorite of mine) and quite possibly a much better way of writing web apps, time will tell)
 
 This site, <a href="http://todomvc.com" target="_blank">TodoMVC</a> shows you how to build the same Todo List app in a variety of different frameworks.
 
