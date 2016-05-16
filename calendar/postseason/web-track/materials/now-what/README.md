@@ -19,7 +19,7 @@ Like FlickList and Pset8, build some kind of front-end for displaying data from 
 Stuff we didnt really talk about:
 * <a href="https://www.udacity.com/course/object-oriented-javascript--ud015" target="_blank">object-oriented Javascript</a>
 * <a href="http://eloquentjavascript.net/10_modules.html" target="_blank">modules</a>
-* Promises (a relatively new feature of Javscript)
+* Managing <a href="http://callbackhell.com" target="_blank">callback hell</a> with and without using a cool JS feature called <a href="http://blog.parse.com/learn/engineering/whats-so-great-about-javascript-promises/" target="_blank">Promises</a>
 
 I generally recommend these resources for learning more Javascript:
 * <a href="https://eloquentjavascript.net" target="_blank">Eloquent Javascript</a>
@@ -56,3 +56,4 @@ This site, <a href="http://todomvc.com" target="_blank">TodoMVC</a> shows you ho
 * Add some advanced Javascript features like Promises, wrapping your code in a module and so on.
 * Use some advanced CSS technologies like Sass or Less, and Flexbox. Do some fancy stuff like responding to mouse hovers to provide a great user experience.
 * Improve the movie browsing. The API has tons of data that we aren't using, like movie genres, reviews, actors and actresses. Add more features to help the user browse. This will involve making more API calls and presenting the data in various ways.
+* Handle Errors! When our AJAX calls fail to get a response back, our app should handle the failure gracefully, rather than just crap out.
