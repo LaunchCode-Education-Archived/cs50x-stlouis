@@ -142,7 +142,7 @@ Read more about <a href="http://v4-alpha.getbootstrap.com/components/list-group/
 
 ##### 2e. Style the Form
 
-For guidance, read more about <a>Boostrap Inputs</a>, especially <a>Button Add-ons</a>.
+For guidance, read more about <a href="http://v4-alpha.getbootstrap.com/components/input-group/" target="_blank">Boostrap Input Groups</a>, especially <a href="http://v4-alpha.getbootstrap.com/components/input-group/#button-addons" target="_blank">Button Addons</a>.
 
 ##### 2f. Style the Watchlist
 
