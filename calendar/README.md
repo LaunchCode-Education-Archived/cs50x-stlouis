@@ -2,8 +2,6 @@
 
 We will be having a **Project Fair on Tuesday, June 14th**, from 7pm-8:30pm. From 6pm-7pm we will have a small ceremony / celebration, and hand out certificates to everyone who has completed the class so far. At 7pm, we will open it up to the public, so please invite friends, family, and community members so they can see what you all have been working on!
 
-Everyone is encouraged to attend, even if you do not have a project ready to show. Please RSVP for the Hackathon here: **<a href="https://docs.google.com/forms/d/1vvbZvHoSMlIpZWS3fq7oek6ZmkTKZ1PK1f2BMTkKm4g/viewform?c=0&w=1" target="_blank">Project Fair RSVP</a>**
-
 ###Support LaunchCode
 
 Congrats on making it to the end of CS50x St. Louis! As you know, this class was provided for free to all students due to the support of our partners and individual donors. We want to be able to continue to offer this course for free to future participants. If you value the opportunity you had in this class, and would like to "pay it forward" to ensure future students have the same opportunity, please consider donating to LaunchCode. The approximate cost per student is $300, but any amount you can provide will go towards supporting future CS50x students. If you'd like to donate, please donate here: **<a href="https://www.launchcode.org/donate#donate-once" target="_blank">Donate Now</a>**
